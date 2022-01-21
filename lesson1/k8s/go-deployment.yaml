@@ -24,6 +24,8 @@ spec:
         - name: secret-volume
           mountPath: "/usr/secrets/"
           readOnly: true
+        - name: pvc-volume
+          mountPath: "/data"
         env:
         - name: COLOR
           valueFrom:
@@ -34,6 +36,9 @@ spec:
       - name: secret-volume
         secret:
           secretName: go-secret
+      - name: pvc-volume
+        persistentVolumeClaim:
+          claimName: go-pvc
 ---
 apiVersion: v1
 kind: Service
