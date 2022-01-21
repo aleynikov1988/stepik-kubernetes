@@ -1,0 +1,5 @@
+image: aleynikov1988/go_app:v0.2
+replicas: 3
+secret:
+  name: load-secret
+  password: loadqwerty
