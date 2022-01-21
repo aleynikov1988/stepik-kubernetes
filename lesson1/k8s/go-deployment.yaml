@@ -24,6 +24,12 @@ spec:
         - name: secret-volume
           mountPath: "/usr/secrets/"
           readOnly: true
+        env:
+        - name: COLOR
+          valueFrom:
+            configMapKeyRef:
+              name: env-configmap
+              key: color
       volumes:
       - name: secret-volume
         secret:
